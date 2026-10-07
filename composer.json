@@ -1,0 +1,64 @@
+{
+    "name": "ramir1/laravel-planner",
+    "description": "Database-backed planner of one-off deferred artisan commands for Laravel: schedule a command for a given time, group, cancel and inspect it.",
+    "keywords": ["laravel", "planner", "scheduler", "deferred", "artisan", "commands", "queue"],
+    "homepage": "https://github.com/ramir1/laravel-planner",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Vadim Trofimov",
+            "email": "vadimtrofimov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/bus": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/contracts": "^11.0|^12.0|^13.0",
+        "illuminate/database": "^11.0|^12.0|^13.0",
+        "illuminate/queue": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^2.0|^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "classmap": [],
+        "files": [],
+        "psr-4": {
+            "Ramir\\Planner\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ramir\\Planner\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ramir\\Planner\\Providers\\PlannerServiceProvider"
+            ],
+            "aliases": {
+                "Planner": "Ramir\\Planner\\Facades\\Planner"
+            }
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "pint": "pint",
+        "phpstan": "phpstan analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

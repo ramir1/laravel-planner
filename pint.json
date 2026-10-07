@@ -1,0 +1,8 @@
+{
+    "preset": "laravel",
+    "rules": {},
+    "exclude": [
+        "vendor",
+        "tmp"
+    ]
+}

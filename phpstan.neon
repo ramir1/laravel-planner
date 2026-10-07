@@ -1,0 +1,16 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - src/
+        - config/
+
+    level: 5
+
+    ignoreErrors:
+        -
+            # This is a package, not an application: config files ship env() defaults
+            # to consuming apps via mergeConfigFrom().
+            identifier: larastan.noEnvCallsOutsideOfConfig
+            path: config/*
